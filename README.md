@@ -74,8 +74,13 @@ Or install it yourself as:
 
 ## Usage
 
-It should just work as long as `sass-media_query_combiner` is required. If you're using
-`sass --watch` do:
+In your `config.rb`
+
+```ruby
+require 'sass-media_query_combiner'
+```
+
+If you're using `sass --watch` do:
 
 ```bash
 sass --watch -r sass-media_query_combiner
