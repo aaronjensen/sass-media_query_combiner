@@ -1,6 +1,6 @@
 # Sass::MediaQueryCombiner
 
-Combines all matching media queries while compiling your Sass. 
+Combines all matching media queries while compiling your Sass.
 
 If you're using
 Rails 3.1+ or Sprockets, you should use [sprockets-media_query_combiner](https://github.com/aaronjensen/sprockets-media_query_combiner)
@@ -59,6 +59,8 @@ define your media queries in the right order up front before you use them
 randomly throughout your file.
 
 ## Installation
+
+Requires Ruby >= 1.9.2.
 
 Add this line to your application's Gemfile:
 
