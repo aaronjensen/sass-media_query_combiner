@@ -1,5 +1,7 @@
 # Sass::MediaQueryCombiner
 
+[![Gem Version](https://badge.fury.io/rb/sass-media_query_combiner.png)](http://badge.fury.io/rb/sass-media_query_combiner)
+
 Combines all matching media queries while compiling your Sass.
 
 If you're using
