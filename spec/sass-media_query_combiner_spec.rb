@@ -42,4 +42,25 @@ b {
     color: black; } }
 CSS
   end
+
+  it "should handle webkit keyframes without hanging" do
+    sass = <<SASS
+    .test{ position: relative;
+        @media (min-width: 30em){ top: 1px; }
+        @media (min-width: 40em){ top: 2px; }
+
+        @-webkit-keyframes animate-opacity {
+             0%   { opacity: 0; }
+             100% { opacity: 1; }
+        }
+}
+.test2{ position: relative;
+        @media (min-width: 30em){ top: 1px; }
+        @media (min-width: 40em){ top: 2px; }
+        }
+SASS
+    Timeout::timeout(2) do
+      Sass::Engine.new(sass, syntax: :scss).render
+    end
+  end
 end
