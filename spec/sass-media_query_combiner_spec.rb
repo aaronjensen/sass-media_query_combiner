@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'sass-media_query_combiner'
 
 describe "Combiner" do
-  it "should with sass" do
+  it "should work with sass" do
     sass = <<SASS
 h3
   color: orange
@@ -23,6 +23,8 @@ b
   color: yellow
 SASS
 
+    # NOTE: the weird interpolated space in there is required to match.
+    # My editor strips out trailing whitespace, so that's how I get it to stay.
     Sass::Engine.new(sass).render.should == <<CSS
 h3 {
   color: orange; }
@@ -31,7 +33,7 @@ b {
 
 @media (max-width: 480px) {
   h1 {
-    color: red; } 
+    color: red; }#{" "}
   h2 {
     color: blue; } }
 
