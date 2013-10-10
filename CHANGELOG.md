@@ -1,3 +1,9 @@
+## 0.0.4 (2013-10-09)
+
+* Internal refactor to allow
+  [sprockets-media_query_combiner](https://github.com/aaronjensen/sprockets-media_query_combiner)
+  to depend on this project.
+
 ## 0.0.3 (2013-10-09)
 
 * Fix compiler hanging when using `@-webkit-keyframes` in media queries
