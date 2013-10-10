@@ -17,7 +17,7 @@ module Sass
         (?<body>            # The actual body, this will be $2
           (?<braces>        #   Recursive capture group
             (?:
-              [^{}]+        #     Anything that is not a brace
+              [^{}]*        #     Anything that is not a brace
             )
             |               #     OR
             (

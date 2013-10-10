@@ -42,25 +42,17 @@ b {
     color: black; } }
 CSS
   end
+end
 
-  it "should handle webkit keyframes without hanging" do
-    sass = <<SASS
-    .test{ position: relative;
-        @media (min-width: 30em){ top: 1px; }
-        @media (min-width: 40em){ top: 2px; }
-
-        @-webkit-keyframes animate-opacity {
-             0%   { opacity: 0; }
-             100% { opacity: 1; }
-        }
+describe Sass::MediaQueryCombiner do
+  it "should handle keyframes in media queries" do
+    Timeout::timeout(0.5) do
+      Sass::MediaQueryCombiner.combine <<CSS
+@media (min-width: 40em) {
+  @-webkit-keyframes whatever {}
 }
-.test2{ position: relative;
-        @media (min-width: 30em){ top: 1px; }
-        @media (min-width: 40em){ top: 2px; }
-        }
-SASS
-    Timeout::timeout(2) do
-      Sass::Engine.new(sass, syntax: :scss).render
+CSS
     end
+
   end
 end
