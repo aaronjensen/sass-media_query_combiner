@@ -43,16 +43,3 @@ b {
 CSS
   end
 end
-
-describe Sass::MediaQueryCombiner do
-  it "should handle keyframes in media queries" do
-    Timeout::timeout(0.5) do
-      Sass::MediaQueryCombiner.combine <<CSS
-@media (min-width: 40em) {
-  @-webkit-keyframes whatever {}
-}
-CSS
-    end
-
-  end
-end
