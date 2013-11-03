@@ -1,3 +1,7 @@
+## 0.0.5 (2013-11-02)
+
+* [Fix hang when using `debug_info: true`](https://github.com/aaronjensen/sass-media_query_combiner/issues/8#issuecomment-27630196)
+
 ## 0.0.4 (2013-10-09)
 
 * Internal refactor to allow
