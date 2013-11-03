@@ -11,4 +11,15 @@ describe Sass::MediaQueryCombiner::Combiner do
 CSS
     end
   end
+
+  it "should handle debug info" do
+    Timeout::timeout(0.5) do
+      Sass::MediaQueryCombiner::Combiner.combine <<CSS
+@media (max-width: 480px) {
+@media -sass-debug-info {filename{}line{}}
+  h1 {
+    color: red; } }
+CSS
+    end
+  end
 end

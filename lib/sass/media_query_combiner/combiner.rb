@@ -9,6 +9,7 @@ module Sass
           \n?                 # Optional newline
           (?<query>           # The media query parameters, this will be $1
             @media            #   Start with @media
+            (?!\ -sass-debug-info) # Ignore sass-debug-info
             [^{]+             #   One to many characters that are not {, we are guaranteed to have a space
           )
           {
@@ -16,12 +17,10 @@ module Sass
             (?<braces>        #   Recursive capture group
               (?:
                 [^{}]*        #     Anything that is not a brace
-              )
-              |               #     OR
-              (
+                |             #     OR
                 {\g<braces>}  #     Recursively capture things within braces, this allows for balanced braces
-              )
-            )*                # As many of these as we have
+              )*              # As many of these as we have
+            )
           )
           }
           \n?                 # Optional newline
