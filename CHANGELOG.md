@@ -1,3 +1,7 @@
+## 0.0.6 (2013-11-15)
+
+* Add license to gemspec
+
 ## 0.0.5 (2013-11-02)
 
 * [Fix hang when using `debug_info: true`](https://github.com/aaronjensen/sass-media_query_combiner/issues/8#issuecomment-27630196)
