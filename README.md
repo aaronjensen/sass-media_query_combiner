@@ -8,7 +8,9 @@
 Combines all matching media queries while compiling your Sass.
 
 If you're using
-Rails 3.1+ or Sprockets, you should use [sprockets-media_query_combiner](https://github.com/aaronjensen/sprockets-media_query_combiner)
+Rails 3.1+ or Sprockets, you should use [sprockets-media_query_combiner](https://github.com/aaronjensen/sprockets-media_query_combiner).
+
+For node pipelines try [node-css-mqpacker](https://github.com/hail2u/node-css-mqpacker).
 
 For example:
 
