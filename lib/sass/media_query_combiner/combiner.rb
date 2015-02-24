@@ -5,6 +5,8 @@ module Sass
         queries = Hash.new { |hash, key| hash[key] = '' }
         pretty = true
 
+        css, source_map_url = extract_source_map_url(css)
+
         filtered_data = css.gsub(/
           \n?                 # Optional newline
           (?<query>           # The media query parameters, this will be $1
@@ -32,7 +34,18 @@ module Sass
 
         combined = queries.map { |query, body| "#{query}{#{body}}" }.
           join(("\n\n" if pretty))
-        "#{filtered_data}#{"\n" if pretty}#{combined}\n"
+        "#{filtered_data}#{"\n" if pretty}#{combined}#{source_map_url}\n"
+      end
+
+      def self.extract_source_map_url(css)
+        source_map_url = ''
+
+        css = css.gsub(/\n*\/\*# sourceMappingURL=.* \*\/$/m) do |match|
+          source_map_url = match
+          ''
+        end
+
+        return css, source_map_url
       end
     end
   end
