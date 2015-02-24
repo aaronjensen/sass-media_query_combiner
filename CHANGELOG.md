@@ -1,4 +1,4 @@
-## 0.0.7 (2014-02-23)
+## 0.0.7 (2015-02-23)
 
 * [Fix file output with sourcemaps not working](https://github.com/aaronjensen/sass-media_query_combiner/issues/13)
 
