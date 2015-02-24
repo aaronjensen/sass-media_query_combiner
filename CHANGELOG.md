@@ -1,3 +1,7 @@
+## 0.0.7 (2014-02-23)
+
+* [Fix file output with sourcemaps not working](https://github.com/aaronjensen/sass-media_query_combiner/issues/13)
+
 ## 0.0.6 (2013-11-15)
 
 * Add license to gemspec
